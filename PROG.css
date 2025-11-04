@@ -1,1 +1,91 @@
+/* Hilangkan scroll horizontal sepenuhnya */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+  
+  /* Bungkus form di tengah layar */
+  .form-container {
+    max-width: 90vw;
+    width: 400px;
+    margin: 50px auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  /* Tabel rapi dan sejajar */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  
+  td {
+    vertical-align: top;
+    padding: 8px 5px;
+    word-wrap: break-word;
+  }
+  
+  /* Label kolom kiri rata kiri dan sejajar */
+  td:first-child {
+    text-align: left;  /* Rata kiri label */
+    width: 100px;      /* Tetapkan lebar agar sejajar */
+    padding-right: 10px;
+  }
+  
+  /* Input & textarea seragam dan responsif */
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    resize: none; /* bisa tarik ke bawah */
+  }
+  
+  /* Flexbox supaya label Address selalu sejajar tengah */
+  .label-wrapper {
+    display: flex;
+    align-items: center;   /* sejajarkan vertikal tengah */
+    height: 100%;          /* ikuti tinggi kolom textarea */
+    justify-content: flex-start; /* rata kiri */
+  }
+  
+  /* Responsif di layar kecil */
+  @media (max-width: 480px) {
+    td:first-child {
+      display: block;
+      width: 100%;
+      padding-bottom: 3px;
+    }
+  
+    td:last-child {
+      display: block;
+      width: 100%;
+    }
+  
+    table, tr, td {
+      display: block;
+      width: 100%;
+    }
+  
+    .label-wrapper {
+      height: auto;
+      align-items: flex-start;
+    }
+  }
 
